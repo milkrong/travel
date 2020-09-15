@@ -23,7 +23,6 @@ export default {
 <style lang="scss" scoped>
 @import '~styles/variables.scss';
 .header {
-  height: 0.86rem;
   line-height: 0.86rem;
   display: flex;
   background: $bgColor;
@@ -38,8 +37,8 @@ export default {
   }
   .header-input {
     flex: 1;
-    height: 0.64rem;
-    line-height: 0.64rem;
+    height: 0.62rem;
+    line-height: 0.62rem;
     margin-top: 0.12rem;
     margin-left: 0.2rem;
     padding: 0.2rem;
