@@ -37,8 +37,8 @@ export default {
   }
   .header-input {
     flex: 1;
-    height: 0.62rem;
-    line-height: 0.62rem;
+    height: 0.24rem;
+    line-height: 0.24rem;
     margin-top: 0.12rem;
     margin-left: 0.2rem;
     padding: 0.2rem;
@@ -48,7 +48,7 @@ export default {
   }
   .header-right {
     width: 1.24rem;
-    float: rigth;
+    float: right;
     text-align: center;
     .arrow-down {
       font-size: 0.24rem;
