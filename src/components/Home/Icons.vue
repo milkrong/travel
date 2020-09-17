@@ -111,6 +111,7 @@ export default {
 @import '~styles/mixins.scss';
 
 .icons {
+  margin-top: 0.2rem;
   /deep/ .swiper-container {
     height: 0;
     padding-bottom: 50%;
