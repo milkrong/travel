@@ -4,11 +4,11 @@
     <ui>
       <li
         class="weekend-item border-bottom"
-        v-for="recommendItem of recommendList"
+        v-for="recommendItem of list"
         :key="recommendItem.id"
       >
         <div class="weekend--item-img-wrapper">
-          <img class="weekend-item-img" :src="recommendItem.imageUrl" />
+          <img class="weekend-item-img" :src="recommendItem.imgUrl" />
         </div>
         <div class="weekend-item-info">
           <p class="weekend-item-info-title">{{ recommendItem.title }}</p>
@@ -22,32 +22,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data() {
-    return {
-      recommendList: [
-        {
-          id: '1',
-          imageUrl:
-            'https://imgs.qunarzz.com/vs_ceph_vs_tts/a3e76337-0286-4bff-b6bb-55a18b9b289f.jpg_r_480x320x95_42aed1f3.jpg',
-          title: '云南大理+丽江',
-          desc: '维纳斯皇家酒店'
-        },
-        {
-          id: '2',
-          imageUrl:
-            'https://imgs.qunarzz.com/vs_ceph_vs_tts/a3e76337-0286-4bff-b6bb-55a18b9b289f.jpg_r_480x320x95_42aed1f3.jpg',
-          title: '云南大理+丽江',
-          desc: '维纳斯皇家酒店'
-        },
-        {
-          id: '3',
-          imageUrl:
-            'https://imgs.qunarzz.com/vs_ceph_vs_tts/a3e76337-0286-4bff-b6bb-55a18b9b289f.jpg_r_480x320x95_42aed1f3.jpg',
-          title: '云南大理+丽江',
-          desc: '维纳斯皇家酒店'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -56,7 +32,6 @@ export default {
 @import '~styles/mixins.scss';
 .weekend {
   &-title {
-    margin-top: 0.2rem;
     line-height: 0.8rem;
     background: #eee;
     text-indent: 0.2rem;
@@ -64,7 +39,7 @@ export default {
   &-item-img-wrapper {
     overflow: hidden;
     height: 0;
-    padding-bottom: 33.9%;
+    padding-bottom: 37.09%;
   }
   &-item {
     &-img {

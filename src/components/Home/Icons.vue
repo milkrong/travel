@@ -4,9 +4,9 @@
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="icon of page" :key="icon.id">
           <div class="icon-image">
-            <img class="icon-image-content" :src="icon.imageUrl" />
+            <img class="icon-image-content" :src="icon.imgUrl" />
           </div>
-          <p class="icon-title">{{ icon.title }}</p>
+          <p class="icon-title">{{ icon.desc }}</p>
         </div>
       </swiper-slide>
       <swiper-slide>
@@ -27,73 +27,20 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data() {
     return {
       swiperOptions: {
         autoplay: false
-      },
-      iconsList: [
-        {
-          id: '1',
-          imageUrl:
-            'https://s.qunarzz.com/homenode/images/touchheader/package.png',
-          title: '度假'
-        },
-        {
-          id: '2',
-          imageUrl:
-            'https://s.qunarzz.com/homenode/images/touchheader/piao.png',
-          title: '景点门票'
-        },
-        {
-          id: '3',
-          imageUrl:
-            'https://s.qunarzz.com/homenode/images/touchheader/piao.png',
-          title: '度假'
-        },
-        {
-          id: '4',
-          imageUrl:
-            'https://s.qunarzz.com/homenode/images/touchheader/piao.png',
-          title: '度假'
-        },
-        {
-          id: '5',
-          imageUrl:
-            'https://s.qunarzz.com/homenode/images/touchheader/piao.png',
-          title: '景点门票'
-        },
-        {
-          id: '6',
-          imageUrl:
-            'https://s.qunarzz.com/homenode/images/touchheader/piao.png',
-          title: '度假'
-        },
-        {
-          id: '7',
-          imageUrl:
-            'https://s.qunarzz.com/homenode/images/touchheader/piao.png',
-          title: '度假'
-        },
-        {
-          id: '8',
-          imageUrl:
-            'https://s.qunarzz.com/homenode/images/touchheader/piao.png',
-          title: '度假'
-        },
-        {
-          id: '9',
-          imageUrl:
-            'https://s.qunarzz.com/homenode/images/touchheader/piao.png',
-          title: '度假'
-        }
-      ]
+      }
     }
   },
   computed: {
     pages() {
       const pages = []
-      this.iconsList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []

@@ -4,10 +4,10 @@
     <ui>
       <li
         class="recommend-item border-bottom"
-        v-for="recommendItem of recommendList"
+        v-for="recommendItem of list"
         :key="recommendItem.id"
       >
-        <img class="recommend-item-img" :src="recommendItem.imageUrl" />
+        <img class="recommend-item-img" :src="recommendItem.imgUrl" />
 
         <div class="recommend-item-info">
           <p class="recommend-item-info-title">{{ recommendItem.title }}</p>
@@ -22,32 +22,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data() {
-    return {
-      recommendList: [
-        {
-          id: '1',
-          imageUrl:
-            'https://imgs.qunarzz.com/vs_ceph_vs_tts/a3e76337-0286-4bff-b6bb-55a18b9b289f.jpg_r_480x320x95_42aed1f3.jpg',
-          title: '云南大理+丽江',
-          desc: '维纳斯皇家酒店'
-        },
-        {
-          id: '2',
-          imageUrl:
-            'https://imgs.qunarzz.com/vs_ceph_vs_tts/a3e76337-0286-4bff-b6bb-55a18b9b289f.jpg_r_480x320x95_42aed1f3.jpg',
-          title: '云南大理+丽江',
-          desc: '维纳斯皇家酒店'
-        },
-        {
-          id: '3',
-          imageUrl:
-            'https://imgs.qunarzz.com/vs_ceph_vs_tts/a3e76337-0286-4bff-b6bb-55a18b9b289f.jpg_r_480x320x95_42aed1f3.jpg',
-          title: '云南大理+丽江',
-          desc: '维纳斯皇家酒店'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
